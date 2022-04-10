@@ -1,13 +1,13 @@
 <?php
 
-namespace \Alura\Pdo\Infrastructure\Repository;
+namespace Alura\Pdo\infrastructure\Repository;
 
 use Alura\Pdo\Domain\Model\Student;
 use Alura\Pdo\Domain\Repository\StudentRepository;
 use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use PDO;
 
-$pdo = Alura\Pdo\Infrastructure\Persistence\ConnectionCreator::createConnection();
+$pdo = \Alura\Pdo\Infrastructure\Persistence\ConnectionCreator::createConnection();
 
 class PdoStudentrepository implements StudentRepository
 {
