@@ -3,7 +3,8 @@
 use Alura\Pdo\Domain\Model\Student;
 
 require_once 'vendor/autoload.php';
-require 'conexao.php';
+
+$pdo = Alura\Pdo\Infrastructure\Persistence\ConnectionCreator::createConnection();
 
 $statement = $pdo->query('SELECT * FROM STUDENTS;');
 

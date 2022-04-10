@@ -1,7 +1,9 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require 'conexao.php';
+
+
+$pdo = Alura\Pdo\Infrastructure\Persistence\ConnectionCreator::createConnection();
 
 $preparedStatement = $pdo->prepare('DELETE FROM students WHERE id = ?');
 $preparedStatement->bindValue(1, 4,PDO::PARAM_INT);

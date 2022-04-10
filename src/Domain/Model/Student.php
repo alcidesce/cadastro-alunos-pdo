@@ -14,6 +14,15 @@ class Student
         $this->name = $name;
         $this->birthDate = $birthDate;
     }
+    
+    public function defineID(int $id): void
+    {
+        if (!is_nan($this->id)){
+            throw new \DomainException('Você só pode definir o ID uma vez');
+        }
+        
+        $this->id = $id;
+    }
 
     public function id(): ?int
     {
@@ -23,6 +32,11 @@ class Student
     public function name(): string
     {
         return $this->name;
+    }
+    
+    public function chargeName(string $newname): void 
+    {
+        $this->name = $newname;
     }
 
     public function birthDate(): \DateTimeInterface
